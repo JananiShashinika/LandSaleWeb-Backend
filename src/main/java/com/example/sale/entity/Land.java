@@ -30,13 +30,6 @@ public class Land {
     private String Status;
 
 
-//    @Column(name=" no_of_perches")
-//    private int No_of_Perches;
-//    @Column(name="details ")
-//    private String Details;
-//    @Column(name=" ")
-//    private String Certificates;
-
 
 
 }

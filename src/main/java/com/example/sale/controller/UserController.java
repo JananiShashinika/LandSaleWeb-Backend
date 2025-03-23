@@ -17,7 +17,8 @@ public class UserController {
 
     @GetMapping("/getUsers")
     public List<UserDTO> getUser() {
-        return userService.getAllAUsers(); }
+        return userService.getAllAUsers();
+    }
 
     @PostMapping("/saveUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO) {
@@ -34,14 +35,16 @@ public class UserController {
         return userService.deleteUser(userDTO);
     }
 
-    @GetMapping("/getUserByUserId/{userID}")
-    public UserDTO getUserByUserID(@PathVariable String userID){
-        return userService.getUserByUserID(userID);
+    @GetMapping("/getUserByUserId/{id}")
+    public UserDTO getUserByUserId(@PathVariable String id){
+
+        return userService.getUserByUserID(id);
     }
 
-    @GetMapping("/getUserByUserIDAndAddress/{userID}/{address}")
-    public UserDTO getUserByUserIDAndAddress(@PathVariable String userID ,@PathVariable String address){
-        System.out.println("User ID :"+userID + "Address :"+address);
-        return userService.getUserByUserIDAndAddress(userID,address);
+    @GetMapping("/getUserByUserIdUsernamePassword/{id}/{username}/{password}")
+    public UserDTO getUserByUserIdUsernamePassword(@PathVariable String id ,@PathVariable String username,
+                                             @PathVariable String password){
+        System.out.println("User ID :"+id + "Username :"+username + "Password :"+password);
+        return userService.getUserByUserIDUsernamePassword(id,username,password);
     }
 }

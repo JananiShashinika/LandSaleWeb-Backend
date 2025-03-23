@@ -7,6 +7,8 @@ import com.example.sale.repo.UserRepo;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,7 +16,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserService {
+public class UserService{
     @Autowired
     private UserRepo userRepo;
 
@@ -44,16 +46,16 @@ public class UserService {
     //user id > user details  (get user details by user id-filter)
     //select * from user where id = 2
     //--->go repo
-    public UserDTO getUserByUserID(String userID){
-        User user=userRepo.getUserByUserID(userID);
+    public UserDTO getUserByUserID(String id){
+        User user=userRepo.getUserByUserId(id);
 
         return modelMapper.map(user,UserDTO.class);
     }
 
     //user, address > user details (get user details by user id & address)
     //select * from user where id = 2 and address = "kandy"
-    public UserDTO getUserByUserIDAndAddress(String userId, String address) {
-        User user = userRepo.getUserByUserIDAndAddress(userId, address);
+    public UserDTO getUserByUserIDUsernamePassword(String id, String username, String password) {
+        User user = userRepo.getUserByUserIdUsernamePassword(id, username,password);
         return modelMapper.map(user, UserDTO.class);
     }
 

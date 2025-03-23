@@ -18,20 +18,20 @@ public class BookLandDTO {
     private int id;
 
     @Column(name = "Town")
-    private String Town;
+    private String town;
 
     @Column(name = "land_name")
-    private String LandName;
+    private String landName;
 
     @Column(name = "land_no")
-    private String LandNo;
+    private String landNo;
 
     @Column(name = "full_name")
-    private String FullName;
+    private String fullName;
 
     @Column(name = "Tel")
-    private String Tel;
+    private String tel;
 
     @Column(name = "Extra")
-    private String Extra;
+    private String extra;
 }

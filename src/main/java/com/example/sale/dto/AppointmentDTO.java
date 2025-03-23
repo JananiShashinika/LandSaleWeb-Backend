@@ -18,9 +18,11 @@ public class AppointmentDTO {
 
     private int App_No;
     private Timestamp Date_Time;
-    @Column(name = "appointment_type")
-    private String AppointmentType;
-    private String Note;
+    private String name;
+    private String phone;
+    private String message;
+    private boolean isChecked;
+
 
 
 
